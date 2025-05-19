@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_news">
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_wordlist"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.WordlistFragment"
+        android:label="@string/title_wordlist"
+        tools:layout="@layout/fragment_wordlist" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="kr.co.gachon.moproject_d.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
