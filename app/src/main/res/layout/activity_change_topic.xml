@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.SettingFragment">
+
+
+    <Space
+        android:id="@+id/spaceTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/ic_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spaceTop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_setting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spaceTop"
+        app:layout_constraintLeft_toRightOf="@+id/ic_setting"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="설정"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toBottomOf="@id/ic_setting"/>
+
+
+    <TextView
+        android:id="@+id/txt_select_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        app:layout_constraintTop_toBottomOf="@id/space1"
+        android:text="보고싶은 뉴스의 테마를 정해주세요!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_select_topic"/>
+
+
+    <android.widget.Button
+        android:id="@+id/btn_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:background="@drawable/button_complete_shape"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingLeft="120dp"
+        android:paddingRight="120dp"
+        android:text="완료"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/space2"
+        app:layout_constraintTop_toBottomOf="@id/space2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
