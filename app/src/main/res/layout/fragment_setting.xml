@@ -60,7 +60,6 @@
         app:layout_constraintTop_toBottomOf="@id/txt_original"
         app:layout_constraintLeft_toLeftOf="@id/txt_original"
         android:drawableLeft="@drawable/web"
-        android:drawablePadding="10000dp"
         android:fontFamily="@font/inter_semibold"
         android:padding="0dp"
         android:text="뉴스 언어 변경"
@@ -73,7 +72,9 @@
         android:background="#00FFFFFF"
         android:fontFamily="@font/inter_semibold"
         app:layout_constraintTop_toBottomOf="@id/news_language_change"
+        android:drawableLeft="@drawable/ic_news_topic"
         app:layout_constraintLeft_toLeftOf="@id/news_language_change"
+        android:padding="8dp"
         android:text="뉴스 토픽 변경"
         android:textColor="@color/black" />
 
@@ -137,6 +138,8 @@
         android:fontFamily="@font/inter_semibold"
         app:layout_constraintTop_toBottomOf="@id/ic_account_id"
         app:layout_constraintLeft_toLeftOf="@id/ic_account_id"
+        android:drawableLeft="@drawable/ic_account_change"
+        android:padding="5dp"
         android:layout_marginTop="30dp"
         android:text="계정 변경하기"
         android:textColor="@color/black" />
