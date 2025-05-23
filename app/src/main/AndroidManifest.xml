@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".InitialCheckActivity"/>
+        <activity android:name=".InitialAccountActivity"/>
+        <activity android:name=".InitialCompleteActivity"/>
+        <activity android:name=".InitialTopicActivity"/>
+        <activity android:name=".InitialLanguageActivity"/>
     </application>
 
 </manifest>
