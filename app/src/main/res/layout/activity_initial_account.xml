@@ -65,13 +65,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#D7D7D7"
+        android:id="@+id/txt_initial_user_id"
         android:text="TEXT INPUT"
         app:layout_constraintTop_toBottomOf="@id/space2"
         app:layout_constraintLeft_toRightOf="@id/txt_user_id"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="60dp"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="397dp" />
+        android:layout_marginLeft="60dp" />
 
     <Space
         android:id="@+id/space3"
@@ -80,19 +79,38 @@
         app:layout_constraintTop_toBottomOf="@id/txt_user_id"/>
 
 
-    <android.widget.Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="64dp"
-        android:background="@drawable/button_complete_shape"
-        android:fontFamily="@font/inter_semibold"
-        android:paddingLeft="120dp"
-        android:paddingRight="120dp"
-        android:text="완료"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="@id/space3"
-        app:layout_constraintTop_toBottomOf="@id/space3" />
+        app:layout_constraintTop_toBottomOf="@id/space3" >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"/>
+
+
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_initial_account_complete"
+            android:background="@drawable/button_complete_shape"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingLeft="120dp"
+            android:paddingRight="120dp"
+            android:text="완료"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"/>
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
