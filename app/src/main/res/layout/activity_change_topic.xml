@@ -10,7 +10,7 @@
     <Space
         android:id="@+id/spaceTop"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="20dp"
         app:layout_constraintTop_toTopOf="parent"/>
 
 
@@ -38,7 +38,7 @@
     <Space
         android:id="@+id/space1"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         app:layout_constraintTop_toBottomOf="@id/ic_setting"/>
 
 
