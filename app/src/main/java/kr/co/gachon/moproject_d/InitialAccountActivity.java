@@ -1,6 +1,7 @@
 package kr.co.gachon.moproject_d;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,12 @@ public class InitialAccountActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"다시 입력하시오", Toast.LENGTH_LONG).show();
                 }
                 else{
+
+                    SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("userId",txtAccountID.getText().toString());
+                    editor.apply();
+
                     Intent intent = new Intent(InitialAccountActivity.this, InitialCompleteActivity.class);
                     startActivity(intent);
                 }

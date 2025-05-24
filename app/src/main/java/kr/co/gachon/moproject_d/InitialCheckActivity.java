@@ -36,14 +36,16 @@ public class InitialCheckActivity extends AppCompatActivity {
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(InitialCheckActivity.this, InitialTopicActivity.class);
+                startActivity(intent);
             }
         });
 
         btnNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(InitialCheckActivity.this, InitialAccountActivity.class);
+                startActivity(intent);
             }
         });
 
