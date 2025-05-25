@@ -27,6 +27,9 @@
         <activity android:name=".InitialCompleteActivity"/>
         <activity android:name=".InitialTopicActivity"/>
         <activity android:name=".InitialLanguageActivity"/>
+        <activity android:name=".ChangeAccountActivity"/>
+        <activity android:name=".ChangeLanguageActivity"/>
+        <activity android:name=".ChangeTopicActivity"/>
     </application>
 
 </manifest>
