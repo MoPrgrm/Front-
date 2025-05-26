@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import kr.co.gachon.moproject_d.ChangeAccountActivity;
+import kr.co.gachon.moproject_d.ChangeLanguageActivity;
+import kr.co.gachon.moproject_d.ChangeTopicActivity;
 import kr.co.gachon.moproject_d.InitialAccountActivity;
 import kr.co.gachon.moproject_d.InitialCheckActivity;
 import kr.co.gachon.moproject_d.databinding.FragmentSettingBinding;
@@ -30,11 +32,11 @@ public class SettingFragment extends Fragment {
         View root = binding.getRoot();
 
         binding.btnNewsLanguageChange.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), InitialCheckActivity.class));
+            startActivity(new Intent(getActivity(), ChangeLanguageActivity.class));
         });
 
         binding.btnNewsTopicChange.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), InitialAccountActivity.class));
+            startActivity(new Intent(getActivity(), ChangeTopicActivity.class));
         });
 
         binding.btnAccountChange.setOnClickListener(v -> {
