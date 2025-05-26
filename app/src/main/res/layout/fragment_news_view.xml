@@ -17,6 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="25dp"
+                android:src="@drawable/newspaper_variant_outline" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -26,13 +33,6 @@
                 android:textColor="@color/black"
                 android:id="@+id/btn_news_back"
                 android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="25dp"
-                android:src="@drawable/newspaper_variant_outline" />
 
         </FrameLayout>
 
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/news_view_title"
+            android:id="@+id/txt_news_view_title"
             android:text="제목제목제목제목제목제목제목제목제목"
             android:textSize="24dp"
             android:layout_weight="1"/>
@@ -93,16 +93,13 @@
 
     </LinearLayout>
 
-
-
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="5dp"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:id="@+id/news_view_img"
+        android:id="@+id/img_news_view_img"
         android:layout_height="160dp"/>
 
     <Space
@@ -129,7 +126,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/news_view_content"
+                android:id="@+id/txt_news_view_content"
                 android:text="내용내용내용
 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
