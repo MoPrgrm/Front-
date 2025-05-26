@@ -9,7 +9,14 @@
         android:id="@+id/navigation_news"
         android:name="kr.co.gachon.moproject_d.ui.news.NewsFragment"
         android:label="@string/title_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_news_to_news_site"
+            app:destination="@id/newsSiteFragment"/>
+        <action
+            android:id="@+id/action_news_to_news_view"
+            app:destination="@id/newsViewFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_wordlist"
@@ -22,4 +29,44 @@
         android:name="kr.co.gachon.moproject_d.ui.setting.SettingFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsListFragment"
+        android:label="news_list_fragment"
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_news_list_to_view"
+            app:destination="@id/newsViewFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsTopicFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsTopicFragment"
+        android:label="news_list_fragment"
+        tools:layout="@layout/fragment_news_select_topic">
+        <action
+            android:id="@+id/action_news_topic_to_list"
+            app:destination="@id/newsListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsViewFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsViewFragment"
+        android:label="news_view_fragment"
+        tools:layout="@layout/fragment_news_view">
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsSiteFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsSiteFragment"
+        android:label="news_site_fragment"
+        tools:layout="@layout/fragment_news_select_site">
+        <action
+            android:id="@+id/action_news_site_to_topic"
+            app:destination="@id/newsTopicFragment"/>
+
+    </fragment>
+
+
 </navigation>
