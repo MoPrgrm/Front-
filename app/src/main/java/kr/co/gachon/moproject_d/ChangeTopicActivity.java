@@ -29,7 +29,14 @@ public class ChangeTopicActivity extends AppCompatActivity {
             return insets;
         });
 
+        btnComplete = findViewById(R.id.btn_complete);
 
+        btnComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }
