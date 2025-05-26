@@ -1,6 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="25dp"
+                android:src="@drawable/newspaper_variant_outline" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:padding="0dp"
+                android:background="#00FFFFFF"
+                android:text="←       뉴스"
+                android:textColor="@color/black"
+                android:id="@+id/btn_news_back"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="외신뉴스 : topic"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="15"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+
+                    <!-- 뉴스를 생성할 때마다 이 프레임레이아웃을 생성 -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/img_news_list_1"
+                                android:src="@drawable/ic_setting"/>
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_new_list_title_1'
+                                android:text="설정, 설정이 불가피한 것으로 보아 국민 불안.."
+                                android:textSize="18dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text="게시 날짜"
+                                android:textSize="12dp"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
+                                app:layout_constraintTop_toBottomOf="@id/txt_new_list_title_1" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/btn_news_list_1"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="15"/>
+
+        </LinearLayout>
+
 
 </LinearLayout>
