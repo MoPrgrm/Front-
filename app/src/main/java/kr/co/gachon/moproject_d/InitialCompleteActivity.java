@@ -30,7 +30,7 @@ public class InitialCompleteActivity extends AppCompatActivity {
 
 
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        handler.postDelayed(new Runnable() {// setting complete page and this page start to communication with backend
             @Override
             public void run() {
                 Intent intent = new Intent(InitialCompleteActivity.this, MainActivity.class);

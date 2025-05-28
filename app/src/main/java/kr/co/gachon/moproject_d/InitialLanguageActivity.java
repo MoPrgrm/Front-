@@ -37,7 +37,7 @@ public class InitialLanguageActivity extends AppCompatActivity {
         editor.putString("language","English");
         editor.apply();
 
-        btnEnglish.setOnClickListener(new View.OnClickListener() {
+        btnEnglish.setOnClickListener(new View.OnClickListener() {// click english button, edit user language
             @Override
             public void onClick(View v) {
                 SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
@@ -49,7 +49,7 @@ public class InitialLanguageActivity extends AppCompatActivity {
             }
         });
 
-        btnJapanese.setOnClickListener(new View.OnClickListener() {
+        btnJapanese.setOnClickListener(new View.OnClickListener() {// click japanese button, edit user language
             @Override
             public void onClick(View v) {
                 SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
@@ -61,7 +61,7 @@ public class InitialLanguageActivity extends AppCompatActivity {
             }
         });
 
-        btnChinese.setOnClickListener(new View.OnClickListener() {
+        btnChinese.setOnClickListener(new View.OnClickListener() {// click chinese button, edit user language
             @Override
             public void onClick(View v) {
                 SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);

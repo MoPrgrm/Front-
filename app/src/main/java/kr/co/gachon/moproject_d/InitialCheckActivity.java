@@ -33,7 +33,7 @@ public class InitialCheckActivity extends AppCompatActivity {
         btnYes = findViewById(R.id.btn_initial_yes);
         btnNo = findViewById(R.id.btn_initial_no);
 
-        btnYes.setOnClickListener(new View.OnClickListener() {
+        btnYes.setOnClickListener(new View.OnClickListener() {// existing user
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(InitialCheckActivity.this, InitialTopicActivity.class);
@@ -41,7 +41,7 @@ public class InitialCheckActivity extends AppCompatActivity {
             }
         });
 
-        btnNo.setOnClickListener(new View.OnClickListener() {
+        btnNo.setOnClickListener(new View.OnClickListener() {// not existing user
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(InitialCheckActivity.this, InitialAccountActivity.class);

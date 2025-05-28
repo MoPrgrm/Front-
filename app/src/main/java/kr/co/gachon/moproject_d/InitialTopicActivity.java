@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class InitialTopicActivity extends AppCompatActivity {
 
-    Button btnTopic;
+    Button btnScience,btnEconomy,btnPolitics,btnSocial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +28,58 @@ public class InitialTopicActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnTopic = findViewById(R.id.btn_initial_complete);
+        btnScience = findViewById(R.id.btn_science);
+        btnEconomy = findViewById(R.id.btn_economy);
+        btnPolitics = findViewById(R.id.btn_politics);
+        btnSocial = findViewById(R.id.btn_social);
 
-        btnTopic.setOnClickListener(new View.OnClickListener() {
+        btnScience.setOnClickListener(new View.OnClickListener() {//key:topic, value:Science
             @Override
             public void onClick(View v) {
-
-//                SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
-//                SharedPreferences.Editor editor = prefs.edit();
-//                editor.putString("topic","");
-//                editor.apply();
+                SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("topic","Science");
+                editor.apply();
 
                 Intent intent = new Intent(InitialTopicActivity.this, InitialLanguageActivity.class);
                 startActivity(intent);
             }
         });
+        btnEconomy.setOnClickListener(new View.OnClickListener() {//key:topic, value:Economy
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("topic","Economy");
+                editor.apply();
 
+                Intent intent = new Intent(InitialTopicActivity.this, InitialLanguageActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnPolitics.setOnClickListener(new View.OnClickListener() {//key:topic, value:Politics
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("topic","Politics");
+                editor.apply();
+
+                Intent intent = new Intent(InitialTopicActivity.this, InitialLanguageActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnSocial.setOnClickListener(new View.OnClickListener() {//key:topic, value:Social
+            @Override
+            public void onClick(View v) {
+                SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("topic","Social");
+                editor.apply();
+
+                Intent intent = new Intent(InitialTopicActivity.this, InitialLanguageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

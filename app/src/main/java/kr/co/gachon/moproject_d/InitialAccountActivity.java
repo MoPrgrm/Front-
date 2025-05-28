@@ -38,18 +38,24 @@ public class InitialAccountActivity extends AppCompatActivity {
         btnComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(txtAccountID.getText().toString().equals("TEXT INPUT")){//이 구문에서 데이터베이스에 있는 id인지 확인(없으면 알림), 아무것도 입력 안한 경우(알림)
+                if(txtAccountID.getText().toString().isEmpty()){// Check input is empty
                     Toast.makeText(getApplicationContext(),"다시 입력하시오", Toast.LENGTH_LONG).show();
                 }
                 else{
+                    if(true) {// Check input userID is in database --> get user information(user's topic/language) from database
+                        SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("userId",txtAccountID.getText().toString());
+//                        editor.putString("topic",); // edit user topic
+//                        editor.putString("language",); // edit user language
+                        editor.apply();
 
-                    SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = prefs.edit();
-                    editor.putString("userId",txtAccountID.getText().toString());
-                    editor.apply();
-
-                    Intent intent = new Intent(InitialAccountActivity.this, InitialCompleteActivity.class);
-                    startActivity(intent);
+                        Intent intent = new Intent(InitialAccountActivity.this, InitialCompleteActivity.class);
+                        startActivity(intent);
+                    }
+                    else{// input userID is not in database
+                        Toast.makeText(getApplicationContext(),"다시 입력하시오", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });

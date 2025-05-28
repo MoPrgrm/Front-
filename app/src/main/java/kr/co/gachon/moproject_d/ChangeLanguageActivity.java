@@ -34,7 +34,7 @@ public class ChangeLanguageActivity extends AppCompatActivity {
         btnJapanese = findViewById(R.id.btn_japanese);
         btnChinese = findViewById(R.id.btn_chinese);
 
-        btnEnglish.setOnClickListener(new View.OnClickListener() {
+        btnEnglish.setOnClickListener(new View.OnClickListener() {// click english button, edit user language
             @Override
             public void onClick(View v) {
                     SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
@@ -46,7 +46,7 @@ public class ChangeLanguageActivity extends AppCompatActivity {
             }
         });
 
-        btnJapanese.setOnClickListener(new View.OnClickListener() {
+        btnJapanese.setOnClickListener(new View.OnClickListener() {// click japanese button, edit user language
             @Override
             public void onClick(View v) {
                 SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
@@ -58,7 +58,7 @@ public class ChangeLanguageActivity extends AppCompatActivity {
             }
         });
 
-        btnChinese.setOnClickListener(new View.OnClickListener() {
+        btnChinese.setOnClickListener(new View.OnClickListener() {// click chinese button, edit user language
             @Override
             public void onClick(View v) {
                 SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
