@@ -46,7 +46,7 @@ public class ChangeAccountActivity extends AppCompatActivity {
                     if(true){// Check input userID is in database --> get user information(user's topic/language) from database
                         SharedPreferences prefs = getSharedPreferences("userData", MODE_PRIVATE);
                         SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("userId",txtAccountID.getText().toString());
+                        editor.putString("userID",txtAccountID.getText().toString());
 //                        editor.putString("topic",); // edit user topic
 //                        editor.putString("language",); // edit user language
                         editor.apply();
