@@ -38,7 +38,7 @@ public class InitialAccountActivity extends AppCompatActivity {
         btnComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(txtAccountID.getText().toString().equals("TEXT INPUT")){
+                if(txtAccountID.getText().toString().equals("TEXT INPUT")){//이 구문에서 데이터베이스에 있는 id인지 확인(없으면 알림), 아무것도 입력 안한 경우(알림)
                     Toast.makeText(getApplicationContext(),"다시 입력하시오", Toast.LENGTH_LONG).show();
                 }
                 else{

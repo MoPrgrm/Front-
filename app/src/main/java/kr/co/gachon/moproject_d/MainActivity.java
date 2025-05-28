@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         if(isFirstRun){
             Intent intent = new Intent(MainActivity.this, InitialCheckActivity.class);
             startActivity(intent);
-//            SharedPreferences.Editor editor = prefs.edit();
-//            editor.putBoolean("isFirstRun", false);
-//            editor.apply();
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("isFirstRun", false);
+            editor.apply();
         }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
