@@ -22,7 +22,41 @@
         android:id="@+id/navigation_wordlist"
         android:name="kr.co.gachon.moproject_d.ui.wordlist.WordlistFragment"
         android:label="@string/title_wordlist"
-        tools:layout="@layout/fragment_wordlist" />
+        tools:layout="@layout/fragment_wordlist" >
+        <action
+            android:id="@+id/action_wordlist_to_word_select"
+            app:destination="@id/wordSelectFragment" />
+        <action
+            android:id="@+id/action_wordlist_to_quiz_select"
+            app:destination="@id/quizSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordSelectFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.WordSelectFragment"
+        android:label="단어 언어 선택"
+        tools:layout="@layout/fragment_word_select">
+        <action
+            android:id="@+id/action_word_select_to_wordlist_language"
+            app:destination="@id/wordlistLanguageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizSelectFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.QuizSelectFragment"
+        android:label="퀴즈 언어 선택"
+        tools:layout="@layout/fragment_quiz_select" />
+
+    <fragment
+        android:id="@+id/wordlistLanguageFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.WordlistLanguageFragment"
+        android:label="단어장-언어"
+        tools:layout="@layout/fragment_wordlist_language">
+        <argument
+            android:name="selected_language"
+            app:argType="string"
+            android:defaultValue="English" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_setting"
