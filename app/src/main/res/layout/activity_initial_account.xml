@@ -23,7 +23,7 @@
         app:layout_constraintTop_toBottomOf="@id/spaceTop"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <Space
         android:id="@+id/space1"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@id/space1"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <Space
         android:id="@+id/space2"
@@ -59,17 +59,18 @@
         android:layout_marginLeft="20dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="24sp"/>
 
     <android.widget.EditText
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:background="#D7D7D7"
         android:id="@+id/txt_initial_user_id"
+        android:textAlignment="center"
+        android:textSize="24sp"
         android:hint="TEXT INPUT"
         app:layout_constraintTop_toBottomOf="@id/space2"
         app:layout_constraintLeft_toRightOf="@id/txt_user_id"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp" />
 
     <Space
