@@ -1,6 +1,10 @@
 package kr.co.gachon.moproject_d.ui.setting;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +35,10 @@ public class SettingFragment extends Fragment {
         binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        SharedPreferences prefs = requireContext().getSharedPreferences("userData", MODE_PRIVATE);
+        String userID = prefs.getString("userID","Error");
+        binding.txtAccountId.setText(prefs.getString("userID","Error"));
+        
         binding.btnNewsLanguageChange.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), ChangeLanguageActivity.class));
         });
