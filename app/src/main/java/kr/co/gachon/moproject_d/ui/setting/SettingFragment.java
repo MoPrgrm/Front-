@@ -36,9 +36,8 @@ public class SettingFragment extends Fragment {
         View root = binding.getRoot();
 
         SharedPreferences prefs = requireContext().getSharedPreferences("userData", MODE_PRIVATE);
-        String userID = prefs.getString("userID","Error");
         binding.txtAccountId.setText(prefs.getString("userID","Error"));
-        
+
         binding.btnNewsLanguageChange.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), ChangeLanguageActivity.class));
         });
