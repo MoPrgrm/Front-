@@ -87,15 +87,14 @@
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
-                                android:id="@+id/img_news_list_1"
-                                android:src="@drawable/ic_setting"/>
+                                android:id="@+id/img_news_list_1" />
 
                             <TextView
                                 android:layout_width="260dp"
                                 android:layout_height="80dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginLeft="10dp"
-                                android:id='@+id/txt_new_list_title_1'
+                                android:id='@+id/txt_news_list_title_1'
                                 android:text="설정, 설정이 불가피한 것으로 보아 국민 불안.."
                                 android:textSize="18dp"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -107,10 +106,11 @@
                                 android:layout_height="20dp"
                                 android:text="게시 날짜"
                                 android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_1"
                                 android:textColor="@color/gray"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
-                                app:layout_constraintTop_toBottomOf="@id/txt_new_list_title_1" />
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_1" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
