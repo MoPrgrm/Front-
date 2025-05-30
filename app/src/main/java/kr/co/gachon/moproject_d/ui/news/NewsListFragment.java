@@ -69,8 +69,7 @@ public class NewsListFragment extends Fragment {
 
                     Glide.with(view)
                             .load(imageUrl)
-                            .override(100, 100)
-                            .centerCrop()
+                            .fitCenter()
                             .into(imgNewsImage1);
 
                     txtNewsTitle1.setText(firstTitle);
