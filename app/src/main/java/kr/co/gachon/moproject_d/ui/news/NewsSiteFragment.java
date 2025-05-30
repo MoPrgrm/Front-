@@ -30,7 +30,9 @@ public class NewsSiteFragment extends Fragment {
         Button btnCNN = view.findViewById(R.id.btn_cnn);
         Button btnBBC = view.findViewById(R.id.btn_bbc);
         Button btnREUTERS = view.findViewById(R.id.btn_reuters);
+        Button btnAP = view.findViewById(R.id.btn_ap);
         Button btnBack = view.findViewById(R.id.btn_news_back);
+
 
         btnBack.setOnClickListener(v -> {
             NavController navController = NavHostFragment.findNavController(this);
@@ -46,6 +48,10 @@ public class NewsSiteFragment extends Fragment {
         });
 
         btnREUTERS.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
+        });
+
+        btnAP.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
 
