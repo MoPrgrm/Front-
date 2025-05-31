@@ -1,4 +1,3 @@
-
 package kr.co.gachon.moproject_d.ui.wordlist;
 
 import android.app.AlertDialog;
@@ -39,6 +38,7 @@ public class WordlistLanguageFragment extends Fragment {
         wordListContainer = view.findViewById(R.id.wordListContainer);
         TextView tvWordTitle = view.findViewById(R.id.tvWordTitle);
         ImageButton btnAddWord = view.findViewById(R.id.btnAddWord);
+        ImageButton btnBack = view.findViewById(R.id.btnBack);
 
         // Get the selected language from arguments
         if (getArguments() != null) {
@@ -46,7 +46,7 @@ public class WordlistLanguageFragment extends Fragment {
             tvWordTitle.setText("단어-" + selectedLanguage);
         }
 
-        tvWordTitle.setOnClickListener(v -> {
+        btnBack.setOnClickListener(v -> {
             Navigation.findNavController(v).navigateUp();
         });
 

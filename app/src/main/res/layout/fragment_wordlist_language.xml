@@ -5,9 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    android:paddingTop="16dp"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:padding="24dp">
 
     <!-- 상단 타이틀 -->
     <LinearLayout
@@ -15,10 +13,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="32dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="뒤로가기"
+            android:layout_marginEnd="16dp"/>
+
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@drawable/ic_aa"/>
         <TextView
             android:id="@+id/tvWordTitle"
@@ -27,8 +35,8 @@
             android:layout_weight="1"
             android:text="단어-English"
             android:textStyle="bold"
-            android:textSize="22sp"
-            android:layout_marginStart="12dp"/>
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"/>
         <ImageButton
             android:id="@+id/btnAddWord"
             android:layout_width="48dp"
@@ -52,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp"/>
+            android:padding="16dp"/>
 
     </ScrollView>
 </LinearLayout>

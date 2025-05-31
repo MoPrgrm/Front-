@@ -1,11 +1,12 @@
+
 package kr.co.gachon.moproject_d.ui.wordlist;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,12 +25,12 @@ public class QuizSelectFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quiz_select, container, false);
 
-        TextView tvTitleQuiz = view.findViewById(R.id.tvTitleQuiz);
-        Button btnEnglish = view.findViewById(R.id.btnEnglish);
-        Button btnChinese = view.findViewById(R.id.btnChinese);
-        Button btnJapanese = view.findViewById(R.id.btnJapanese);
+        ImageButton btnBack = view.findViewById(R.id.btnBack);
+        LinearLayout btnEnglish = view.findViewById(R.id.btnEnglish);
+        LinearLayout btnChinese = view.findViewById(R.id.btnChinese);
+        LinearLayout btnJapanese = view.findViewById(R.id.btnJapanese);
 
-        tvTitleQuiz.setOnClickListener(v -> {
+        btnBack.setOnClickListener(v -> {
             Navigation.findNavController(v).navigateUp();
         });
 
