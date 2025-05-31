@@ -161,55 +161,7 @@
 
             </FrameLayout>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="15dp"
-                        android:id="@+id/img_reuters"
-                        android:src="@drawable/ic_reuters"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
-                        android:layout_marginLeft="16dp"
-                        android:id='@+id/txt_reuters'
-                        android:text="Reuters"
-                        android:textSize="24dp"
-                        app:layout_constraintLeft_toRightOf="@id/img_reuters"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="영국의 국제 뉴스 에이전시"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginLeft="16dp"
-                        android:textSize="12dp"
-                        android:textColor="@color/black"
-                        app:layout_constraintLeft_toRightOf="@id/img_reuters"
-                        app:layout_constraintTop_toBottomOf="@id/txt_reuters" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/btn_reuters"
-                    android:background="#00FFFFFF" />
-
-            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"

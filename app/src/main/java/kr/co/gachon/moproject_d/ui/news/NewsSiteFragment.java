@@ -32,7 +32,6 @@ public class NewsSiteFragment extends Fragment {
 
         Button btnCNN = view.findViewById(R.id.btn_cnn);
         Button btnBBC = view.findViewById(R.id.btn_bbc);
-        Button btnREUTERS = view.findViewById(R.id.btn_reuters);
         Button btnAP = view.findViewById(R.id.btn_ap);
         Button btnBack = view.findViewById(R.id.btn_news_back);
 
@@ -52,12 +51,6 @@ public class NewsSiteFragment extends Fragment {
 
         btnBBC.setOnClickListener(v -> {
             editor.putString("site","bbc-news");
-            editor.apply();
-            Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
-        });
-
-        btnREUTERS.setOnClickListener(v -> {
-            editor.putString("site","reuters");
             editor.apply();
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
