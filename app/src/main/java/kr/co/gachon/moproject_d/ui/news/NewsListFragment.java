@@ -249,7 +249,6 @@ public class NewsListFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 }

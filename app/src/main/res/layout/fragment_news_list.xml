@@ -89,6 +89,7 @@
                                 android:layout_marginTop="0dp"
                                 android:id="@+id/img_news_list_1" />
 
+
                             <TextView
                                 android:layout_width="260dp"
                                 android:layout_height="80dp"
@@ -96,16 +97,17 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_1'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"/>
 
                             <TextView
                                 android:layout_width="260dp"
                                 android:layout_height="20dp"
                                 android:text=""
                                 android:textSize="12dp"
+                                android:layout_marginTop="5dp"
                                 android:id="@+id/txt_news_list_date_1"
                                 android:textColor="@color/gray"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +148,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_2'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_2"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -196,7 +198,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_3'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_3"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -246,7 +248,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_4'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_4"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -296,7 +298,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_5'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_5"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -346,7 +348,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:id='@+id/txt_news_list_title_6'
                                 android:text=""
-                                android:textSize="18dp"
+                                android:textSize="16dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/img_news_list_6"
                                 app:layout_constraintTop_toTopOf="parent" />
