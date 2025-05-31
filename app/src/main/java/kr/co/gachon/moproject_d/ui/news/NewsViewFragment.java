@@ -1,6 +1,11 @@
 package kr.co.gachon.moproject_d.ui.news;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +21,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import kr.co.gachon.moproject_d.R;
+import com.bumptech.glide.Glide;
 
+import java.util.List;
+
+import kr.co.gachon.moproject_d.R;
+import kr.co.gachon.moproject_d.model.newsview.NewsViewResponse;
+import kr.co.gachon.moproject_d.utils.showSentencesInTextView;
 
 
 public class NewsViewFragment extends Fragment {
@@ -36,11 +46,13 @@ public class NewsViewFragment extends Fragment {
 
         TextView txtNewsTitle = view.findViewById(R.id.txt_news_view_title);
         TextView txtNewsContent = view.findViewById(R.id.txt_news_view_content);
+        TextView txtNewsDate = view.findViewById(R.id.txt_news_view_date);
         TextView txtNewsWord = view.findViewById(R.id.txt_news_view_word);
         TextView txtNewsWordDescription = view.findViewById(R.id.txt_news_view_description);
 
         ImageView imgNewsImg = view.findViewById(R.id.img_news_view_img);
 
+        SharedPreferences prefs = requireContext().getSharedPreferences("userData",MODE_PRIVATE);
 
         btnBack.setOnClickListener(v -> {
             NavController navController = NavHostFragment.findNavController(this);
@@ -51,6 +63,43 @@ public class NewsViewFragment extends Fragment {
             Toast.makeText(requireContext(),"구현 예정(데이터베이스필요)", Toast.LENGTH_LONG).show();
         });
 
+
+        NewsViewRepository repo = new NewsViewRepository();
+        repo.fetchNews(Integer.parseInt(prefs.getString("index","Error")),new NewsViewRepository.NewsCallback() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onSuccess(NewsViewResponse response) {
+                getActivity().runOnUiThread(() -> {
+                    String firstTitle = response.article.title;
+                    String firstDate = response.article.publishedAt;
+                    String imageUrl = response.article.urlToImage;
+                    String str1 = firstDate.substring(0,firstDate.indexOf("T"));
+                    String str2 = firstDate.substring(firstDate.indexOf("T"),firstDate.indexOf("Z"));
+                    List<String> firstContent = response.crawled.sentences;
+
+
+                    Glide.with(view)
+                            .load(imageUrl)
+                            .fitCenter()
+                            .into(imgNewsImg);
+
+                    StringBuilder sb = new StringBuilder();
+
+
+                    txtNewsTitle.setText(firstTitle);
+                    showSentencesInTextView.displaySentences(txtNewsContent,firstContent);
+                    txtNewsDate.setText(str1+str2);
+                    Log.d("뉴스 제목", firstTitle);
+                });
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                getActivity().runOnUiThread(() -> {
+                    Toast.makeText(requireContext(), "불러오기 실패", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
 
         return view;
     }

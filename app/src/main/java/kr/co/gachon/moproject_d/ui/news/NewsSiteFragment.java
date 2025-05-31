@@ -1,5 +1,8 @@
 package kr.co.gachon.moproject_d.ui.news;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +36,8 @@ public class NewsSiteFragment extends Fragment {
         Button btnAP = view.findViewById(R.id.btn_ap);
         Button btnBack = view.findViewById(R.id.btn_news_back);
 
+        SharedPreferences prefs = requireActivity().getSharedPreferences("userData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
 
         btnBack.setOnClickListener(v -> {
             NavController navController = NavHostFragment.findNavController(this);
@@ -40,18 +45,26 @@ public class NewsSiteFragment extends Fragment {
         });
 
         btnCNN.setOnClickListener(v -> {
+            editor.putString("site","cnn");
+            editor.apply();
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
 
         btnBBC.setOnClickListener(v -> {
+            editor.putString("site","bbc-news");
+            editor.apply();
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
 
         btnREUTERS.setOnClickListener(v -> {
+            editor.putString("site","reuters");
+            editor.apply();
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
 
         btnAP.setOnClickListener(v -> {
+            editor.putString("site","associated-press");
+            editor.apply();
             Navigation.findNavController(v).navigate(R.id.action_news_site_to_topic);
         });
 

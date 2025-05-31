@@ -1,4 +1,4 @@
-package kr.co.gachon.moproject_d.model;
+package kr.co.gachon.moproject_d.model.newslist;
 
 import java.util.List;
 

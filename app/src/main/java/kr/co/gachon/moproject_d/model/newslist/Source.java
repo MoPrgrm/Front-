@@ -1,4 +1,4 @@
-package kr.co.gachon.moproject_d.model;
+package kr.co.gachon.moproject_d.model.newslist;
 
 public class Source {
     public String id;
