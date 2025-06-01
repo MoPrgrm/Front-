@@ -118,17 +118,13 @@ public class NewsListFragment extends Fragment {
                     int count = 0;
                     String date,str1,str2;
                     for(int i =0; i<20; i++){
-                        Log.d("test", String.valueOf(i));
                         if(Objects.equals(response.articles.get(i).source.id, prefs.getString("site", null))){
-                            Log.d("test", String.valueOf(i));
                             count +=1;
                             switch (count){
                                 case 1:
                                     btnNewsList1.setEnabled(true);
                                     date = response.articles.get(i).publishedAt;
-                                    Log.d("test",date);
                                     str1 = date.substring(0,date.indexOf("T"));
-                                    Log.d("test","hihi");
                                     str2 = date.substring(date.indexOf("T"),date.indexOf("Z"));
 
                                     Glide.with(view)

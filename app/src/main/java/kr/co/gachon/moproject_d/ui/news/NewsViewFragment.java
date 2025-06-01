@@ -25,15 +25,20 @@ import org.jsoup.Jsoup;
 import java.util.List;
 
 import kr.co.gachon.moproject_d.R;
+import kr.co.gachon.moproject_d.model.Word;
 import kr.co.gachon.moproject_d.model.newsview.NewsViewResponse;
 import kr.co.gachon.moproject_d.model.newsview.NewsViewWordResponse;
+import kr.co.gachon.moproject_d.utils.WordManager;
 import kr.co.gachon.moproject_d.utils.showSentencesInTextView;
 
 
 public class NewsViewFragment extends Fragment {
+    private WordManager wordManager;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        wordManager = new WordManager(requireContext());
     }
 
     @Nullable
@@ -60,6 +65,8 @@ public class NewsViewFragment extends Fragment {
         });
 
         btnWord.setOnClickListener(v -> {
+            Word newWord = new Word(txtNewsWord.getText().toString(),txtNewsWordDescription.getText().toString(),"English");
+            wordManager.saveWord(newWord);
             Toast.makeText(requireContext(),"구현 예정(데이터베이스필요)", Toast.LENGTH_LONG).show();
         });
 
@@ -89,7 +96,6 @@ public class NewsViewFragment extends Fragment {
                     txtNewsTitle.setText(firstTitle);
                     showSentencesInTextView.displaySentences(txtNewsContent,firstContent);
                     txtNewsDate.setText(str1+str2);
-                    Log.d("뉴스 제목", firstTitle);
                 });
             }
 
