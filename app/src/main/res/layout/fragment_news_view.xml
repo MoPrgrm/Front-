@@ -132,7 +132,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textIsSelectable="true"
                 android:id="@+id/txt_news_view_content"
+                android:textSize="16dp"
                 android:text=""/>
 
         </ScrollView>
@@ -184,7 +186,7 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/ic_news_view_check"
                         android:id="@+id/btn_news_view_word"/>
 
@@ -192,8 +194,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txt_news_view_word"
-                        android:text="모르는 단어"
-                        android:textSize="30dp" />
+                        android:text=""
+                        android:textSize="34dp" />
 
                 </LinearLayout>
 
@@ -201,8 +203,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txt_news_view_description"
-                    android:text="단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명
-단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명단어설명"/>
+                    android:textSize="20dp"
+                    android:text=""/>
 
             </LinearLayout>
 

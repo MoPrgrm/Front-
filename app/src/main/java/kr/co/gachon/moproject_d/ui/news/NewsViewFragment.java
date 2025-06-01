@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +15,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.bumptech.glide.Glide;
-
+import org.jsoup.Jsoup;
 import java.util.List;
 
 import kr.co.gachon.moproject_d.R;
 import kr.co.gachon.moproject_d.model.newsview.NewsViewResponse;
+import kr.co.gachon.moproject_d.model.newsview.NewsViewWordResponse;
 import kr.co.gachon.moproject_d.utils.showSentencesInTextView;
 
 
@@ -100,6 +100,64 @@ public class NewsViewFragment extends Fragment {
                 });
             }
         });
+
+        Handler handler = new Handler();
+        final int[] lastStart = {-1};
+        final int[] lastEnd = {-1};
+
+
+        Runnable checkSelection = new Runnable() {
+            @Override
+            public void run() {
+                int start = txtNewsContent.getSelectionStart();
+                int end = txtNewsContent.getSelectionEnd();
+
+                if (start >= 0 && end > start && (start != lastStart[0] || end != lastEnd[0])) {
+                    String selectedText = txtNewsContent.getText().subSequence(start, end).toString();
+
+                    lastStart[0] = start;
+                    lastEnd[0] = end;
+
+                    NewsViewWordRepository wordRepo = new NewsViewWordRepository();
+
+                    wordRepo.fetchNews(selectedText,new NewsViewWordRepository.NewsCallback() {
+                        @SuppressLint("SetTextI18n")
+                        @Override
+                        public void onSuccess(NewsViewWordResponse response) {
+                            getActivity().runOnUiThread(() -> {
+
+                                if (response.result != null && !response.result.isEmpty()) {
+                                    NewsViewWordResponse.WordTranslation firstResult = response.result.get(0);
+
+                                    String speech = firstResult.partOfSpeech;
+                                    String value = (firstResult.values != null && !firstResult.values.isEmpty())
+                                            ? firstResult.values.get(0)
+                                            : "";
+
+                                    txtNewsWord.setText(selectedText);
+                                    txtNewsWordDescription.setText(speech + ": " + Jsoup.parse(value).text());
+                                } else {
+                                    txtNewsWord.setText(selectedText);
+                                    txtNewsWordDescription.setText("결과 없음");
+                                }
+
+                            });
+                        }
+
+                        @Override
+                        public void onFailure(Exception e) {
+                            getActivity().runOnUiThread(() -> {
+                                Toast.makeText(requireContext(), "불러오기 실패", Toast.LENGTH_SHORT).show();
+                            });
+                        }
+                    });
+
+                }
+                handler.postDelayed(this, 100);
+            }
+        };
+
+        handler.post(checkSelection);
 
         return view;
     }

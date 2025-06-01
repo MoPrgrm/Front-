@@ -48,6 +48,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("org.jsoup:jsoup:1.17.2")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
