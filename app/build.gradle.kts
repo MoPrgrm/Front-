@@ -34,7 +34,8 @@ android {
         viewBinding = true
     }
 }
-
+// Room 버전 변수 선언
+val roomVersion = "2.5.2"
 dependencies {
 
     implementation(libs.appcompat)
@@ -50,6 +51,11 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("org.jsoup:jsoup:1.17.2")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+
+    // Room
+    implementation ("androidx.room:room-runtime:2.6.1")
+    annotationProcessor ("androidx.room:room-compiler:2.6.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

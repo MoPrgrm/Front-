@@ -13,21 +13,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import kr.co.gachon.moproject_d.R;
-import kr.co.gachon.moproject_d.model.Word;
-import kr.co.gachon.moproject_d.utils.WordManager;
-import java.util.List;
+import kr.co.gachon.moproject_d.data.WordEntity;
 
 public class WordlistLanguageFragment extends Fragment {
-    private WordManager wordManager;
+    private WordlistViewModel viewModel;
     private LinearLayout wordListContainer;
     private String selectedLanguage;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        wordManager = new WordManager(requireContext());
+        viewModel = new ViewModelProvider(this).get(WordlistViewModel.class);
     }
 
     @Nullable
@@ -44,6 +43,9 @@ public class WordlistLanguageFragment extends Fragment {
         if (getArguments() != null) {
             selectedLanguage = getArguments().getString("selected_language", "English");
             tvWordTitle.setText("단어-" + selectedLanguage);
+
+            // ViewModel에 선택된 언어 설정
+            viewModel.setSelectedLanguage(selectedLanguage);
         }
 
         btnBack.setOnClickListener(v -> {
@@ -58,7 +60,11 @@ public class WordlistLanguageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadWords();
+
+        // LiveData 관찰하여 단어 목록 업데이트
+        viewModel.getWordsByLanguage().observe(getViewLifecycleOwner(), words -> {
+            loadWords(words);
+        });
     }
 
     private void showAddWordDialog() {
@@ -78,21 +84,19 @@ public class WordlistLanguageFragment extends Fragment {
                         return;
                     }
 
-                    Word newWord = new Word(word, meaning, selectedLanguage);
-                    wordManager.saveWord(newWord);
-                    loadWords();
+                    WordEntity newWord = new WordEntity(word, meaning, selectedLanguage);
+                    viewModel.insert(newWord);
                 })
                 .setNegativeButton("취소", null)
                 .show();
     }
 
-    private void loadWords() {
+    private void loadWords(java.util.List<WordEntity> words) {
         if (wordListContainer == null) return;
 
         wordListContainer.removeAllViews();
-        List<Word> words = wordManager.getWordsByLanguage(selectedLanguage);
 
-        for (Word word : words) {
+        for (WordEntity word : words) {
             View wordItem = LayoutInflater.from(requireContext())
                     .inflate(R.layout.item_word, wordListContainer, false);
 
@@ -112,21 +116,14 @@ public class WordlistLanguageFragment extends Fragment {
         }
     }
 
-    private void showDeleteWordDialog(Word word) {
+    private void showDeleteWordDialog(WordEntity word) {
         new AlertDialog.Builder(requireContext())
                 .setTitle("단어 삭제")
                 .setMessage("이 단어를 삭제하시겠습니까?")
                 .setPositiveButton("삭제", (dialog, which) -> {
-                    wordManager.deleteWord(word);
-                    loadWords();
+                    viewModel.delete(word);
                 })
                 .setNegativeButton("취소", null)
                 .show();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        loadWords();
     }
 }

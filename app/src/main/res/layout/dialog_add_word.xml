@@ -5,20 +5,29 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etWord"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="단어 입력"
-        android:inputType="text"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="16dp">
 
-    <EditText
-        android:id="@+id/etMeaning"
+        <EditText
+            android:id="@+id/etWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="단어"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="의미 입력"
-        android:inputType="text"
-        android:layout_marginBottom="8dp"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etMeaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="의미"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
