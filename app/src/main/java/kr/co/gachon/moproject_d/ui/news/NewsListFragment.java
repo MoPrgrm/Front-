@@ -62,6 +62,12 @@ public class NewsListFragment extends Fragment {
         TextView txtNewsDate5 = view.findViewById(R.id.txt_news_list_date_5);
         TextView txtNewsDate6 = view.findViewById(R.id.txt_news_list_date_6);
 
+        TextView line1 = view.findViewById(R.id.line1);
+        TextView line2 = view.findViewById(R.id.line2);
+        TextView line3 = view.findViewById(R.id.line3);
+        TextView line4 = view.findViewById(R.id.line4);
+        TextView line5 = view.findViewById(R.id.line5);
+
         ImageView imgNewsImage1 = view.findViewById(R.id.img_news_list_1);
         ImageView imgNewsImage2 = view.findViewById(R.id.img_news_list_2);
         ImageView imgNewsImage3 = view.findViewById(R.id.img_news_list_3);
@@ -140,6 +146,8 @@ public class NewsListFragment extends Fragment {
                                     editor.putString("list1", String.valueOf(i));
                                     editor.apply();
 
+                                    line1.setVisibility(View.VISIBLE);
+
                                     break;
                                 case 2:
                                     btnNewsList2.setEnabled(true);
@@ -157,6 +165,8 @@ public class NewsListFragment extends Fragment {
 
                                     editor.putString("list2", String.valueOf(i));
                                     editor.apply();
+
+                                    line2.setVisibility(View.VISIBLE);
 
                                     break;
                                 case 3:
@@ -176,6 +186,8 @@ public class NewsListFragment extends Fragment {
                                     editor.putString("list3", String.valueOf(i));
                                     editor.apply();
 
+                                    line3.setVisibility(View.VISIBLE);
+
                                     break;
                                 case 4:
                                     btnNewsList4.setEnabled(true);
@@ -194,6 +206,8 @@ public class NewsListFragment extends Fragment {
                                     editor.putString("list4", String.valueOf(i));
                                     editor.apply();
 
+                                    line4.setVisibility(View.VISIBLE);
+
                                     break;
                                 case 5:
                                     btnNewsList5.setEnabled(true);
@@ -211,6 +225,8 @@ public class NewsListFragment extends Fragment {
 
                                     editor.putString("list5", String.valueOf(i));
                                     editor.apply();
+
+                                    line5.setVisibility(View.VISIBLE);
 
                                     break;
                                 case 6:
