@@ -6,139 +6,206 @@
     android:layout_height="match_parent"
     tools:context=".ui.setting.SettingFragment">
 
-    <Space
-        android:id="@+id/spaceTop"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_setting" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="설정"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginLeft="30dp"
+            android:text="일반"
+            android:textColor="@color/black"
+            android:textSize="36dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_news_language"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="24dp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="60dp"
+                android:text="뉴스 언어 변경"
+                android:textColor="@color/black"/>
 
 
-    <ImageView
-        android:id="@+id/ic_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spaceTop"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/ic_setting" />
+            <Button
+                android:id="@+id/btn_news_language_change"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:background="#00FFFFFF" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spaceTop"
-        app:layout_constraintLeft_toRightOf="@+id/ic_setting"
-        android:layout_marginLeft="20dp"
-        android:fontFamily="@font/inter_semibold"
-        android:text="설정"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        </FrameLayout>
 
-    <Space
-        android:id="@+id/space1"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        app:layout_constraintTop_toBottomOf="@id/ic_setting"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp">
 
-    <TextView
-        android:id="@+id/txt_original"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        app:layout_constraintTop_toBottomOf="@id/space1"
-        app:layout_constraintLeft_toLeftOf="@id/space1"
-        android:layout_marginLeft="30dp"
-        android:text="일반"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_news_topic"/>
 
-    <Button
-        android:id="@+id/news_language_change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/txt_original"
-        app:layout_constraintLeft_toLeftOf="@id/txt_original"
-        android:drawableLeft="@drawable/web"
-        android:drawablePadding="10000dp"
-        android:fontFamily="@font/inter_semibold"
-        android:padding="0dp"
-        android:text="뉴스 언어 변경"
-        android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/news_topic_change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:fontFamily="@font/inter_semibold"
-        app:layout_constraintTop_toBottomOf="@id/news_language_change"
-        app:layout_constraintLeft_toLeftOf="@id/news_language_change"
-        android:text="뉴스 토픽 변경"
-        android:textColor="@color/black" />
-
-    <Space
-        android:id="@+id/space2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintTop_toBottomOf="@id/news_topic_change"/>
-
-    <TextView
-        android:id="@+id/txt_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintTop_toBottomOf="@id/space2"
-        app:layout_constraintLeft_toLeftOf="@id/space2"
-        android:text="계정"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="24dp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="60dp"
+                android:text="뉴스 토픽 변경"
+                android:textColor="@color/black"/>
 
 
-    <ImageView
-        android:id="@+id/ic_account_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_account"
-        app:layout_constraintLeft_toLeftOf="@id/txt_account"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_account_id"
-        />
+            <Button
+                android:id="@+id/btn_news_topic_change"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="#00FFFFFF" />
 
-    <TextView
-        android:id="@+id/txt_account_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        android:text="계정 ID :"
-        app:layout_constraintTop_toTopOf="@id/ic_account_id"
-        app:layout_constraintLeft_toRightOf="@id/ic_account_id"
-        android:textColor="@color/black"
-        android:layout_marginLeft="5dp"
-        android:textSize="15sp" />
+        </FrameLayout>
 
-    <TextView
-        android:id="@+id/account_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        app:layout_constraintTop_toBottomOf="@id/txt_account_id"
-        app:layout_constraintLeft_toLeftOf="@id/txt_account_id"
-        android:text="임의임의임의임의임의임의임의임의"
-        android:textColor="#818181"
-        android:textSize="10sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
-    <Button
-        android:id="@+id/account_change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:fontFamily="@font/inter_semibold"
-        app:layout_constraintTop_toBottomOf="@id/ic_account_id"
-        app:layout_constraintLeft_toLeftOf="@id/ic_account_id"
-        android:layout_marginTop="30dp"
-        android:text="계정 변경하기"
-        android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginLeft="30dp"
+            android:text="계정"
+            android:textColor="@color/black"
+            android:textSize="36dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/ic_account_id"
+                android:layout_marginLeft="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="계정 ID :"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_account_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="임의임의임의임의임의임의임의임의"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#818181"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_account_change"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="24dp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="60dp"
+                android:text="계정 변경하기"
+                android:textColor="@color/black"/>
+
+
+            <Button
+                android:id="@+id/btn_account_change"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="#00FFFFFF" />
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

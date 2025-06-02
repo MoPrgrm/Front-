@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.setting.SettingFragment">
+    tools:context=".ui.setting.SettingFragment"
+    android:id="@+id/initial_check">
 
 
     <Space
@@ -23,7 +24,7 @@
         android:text="안녕하세요"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
 
     <TextView
@@ -35,7 +36,7 @@
         android:text="이 앱은 처음이신가요?"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <Space
         android:id="@+id/space1"
@@ -53,7 +54,7 @@
         android:fontFamily="@font/inter_semibold"
         android:text="네"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="@id/space1"
         app:layout_constraintTop_toBottomOf="@id/space1" />
 
@@ -66,7 +67,7 @@
         android:fontFamily="@font/inter_semibold"
         android:text="아니요"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintLeft_toRightOf="@id/btn_initial_yes"
         app:layout_constraintTop_toBottomOf="@id/space1" />
 

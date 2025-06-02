@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/newsListFragment"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 뉴스"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="3dp"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="#00FFFFFF"
+                android:id="@+id/btn_news_back" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="외신뉴스 : topic"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="15"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+
+                    <!-- 뉴스를 생성할 때마다 이 프레임레이아웃을 생성 -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_1" />
+
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_1'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:layout_marginTop="5dp"
+                                android:id="@+id/txt_news_list_date_1"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_1"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_1" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_1"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_2" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_2'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_2"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_2"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_2"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_2"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_3" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_3'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_3"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_3"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_3"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_3" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_3"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_4" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_4'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_4"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_4"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_4"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_4" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_4"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_5" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_5'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_5"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_5"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_5"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_5"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="125dp"
+                                android:layout_height="120dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_marginTop="0dp"
+                                android:id="@+id/img_news_list_6" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id='@+id/txt_news_list_title_6'
+                                android:text=""
+                                android:textSize="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_6"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="260dp"
+                                android:layout_height="20dp"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:id="@+id/txt_news_list_date_6"
+                                android:textColor="@color/gray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/img_news_list_6"
+                                app:layout_constraintTop_toBottomOf="@id/txt_news_list_title_6" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:id="@+id/btn_news_list_6"
+                            android:background="#00FFFFFF" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="15"/>
+
+        </LinearLayout>
+
+
+</LinearLayout>

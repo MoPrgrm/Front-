@@ -9,17 +9,98 @@
         android:id="@+id/navigation_news"
         android:name="kr.co.gachon.moproject_d.ui.news.NewsFragment"
         android:label="@string/title_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_news_to_news_site"
+            app:destination="@id/newsSiteFragment"/>
+        <action
+            android:id="@+id/action_news_to_news_view"
+            app:destination="@id/newsViewFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_wordlist"
         android:name="kr.co.gachon.moproject_d.ui.wordlist.WordlistFragment"
         android:label="@string/title_wordlist"
-        tools:layout="@layout/fragment_wordlist" />
+        tools:layout="@layout/fragment_wordlist" >
+        <action
+            android:id="@+id/action_wordlist_to_word_select"
+            app:destination="@id/wordSelectFragment" />
+        <action
+            android:id="@+id/action_wordlist_to_quiz_select"
+            app:destination="@id/quizSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordSelectFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.WordSelectFragment"
+        android:label="단어 언어 선택"
+        tools:layout="@layout/fragment_word_select">
+        <action
+            android:id="@+id/action_word_select_to_wordlist_language"
+            app:destination="@id/wordlistLanguageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizSelectFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.QuizSelectFragment"
+        android:label="퀴즈 언어 선택"
+        tools:layout="@layout/fragment_quiz_select" />
+
+    <fragment
+        android:id="@+id/wordlistLanguageFragment"
+        android:name="kr.co.gachon.moproject_d.ui.wordlist.WordlistLanguageFragment"
+        android:label="단어장-언어"
+        tools:layout="@layout/fragment_wordlist_language">
+        <argument
+            android:name="selected_language"
+            app:argType="string"
+            android:defaultValue="English" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_setting"
         android:name="kr.co.gachon.moproject_d.ui.setting.SettingFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsListFragment"
+        android:label="news_list_fragment"
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_news_list_to_view"
+            app:destination="@id/newsViewFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsTopicFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsTopicFragment"
+        android:label="news_list_fragment"
+        tools:layout="@layout/fragment_news_select_topic">
+        <action
+            android:id="@+id/action_news_topic_to_list"
+            app:destination="@id/newsListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsViewFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsViewFragment"
+        android:label="news_view_fragment"
+        tools:layout="@layout/fragment_news_view">
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsSiteFragment"
+        android:name="kr.co.gachon.moproject_d.ui.news.NewsSiteFragment"
+        android:label="news_site_fragment"
+        tools:layout="@layout/fragment_news_select_site">
+        <action
+            android:id="@+id/action_news_site_to_topic"
+            app:destination="@id/newsTopicFragment"/>
+
+    </fragment>
+
+
 </navigation>

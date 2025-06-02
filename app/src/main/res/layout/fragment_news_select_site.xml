@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/newsSelectSiteFragment"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 뉴스"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="3dp"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="#00FFFFFF"
+                android:id="@+id/btn_news_back" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="News Site"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="12"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/img_cnn"
+                        android:src="@drawable/ic_cnn"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginLeft="16dp"
+                        android:id='@+id/txt_cnn'
+                        android:text="CNN"
+                        android:textSize="24dp"
+                        app:layout_constraintLeft_toRightOf="@id/img_cnn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미국의 24시간 뉴스 전문 채널"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="16dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toRightOf="@id/img_cnn"
+                        app:layout_constraintTop_toBottomOf="@id/txt_cnn" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_cnn"
+                    android:background="#00FFFFFF" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="1dp"
+                        android:id="@+id/img_bbc"
+                        android:src="@drawable/ic_bbc"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:id='@+id/txt_bbc'
+                        android:text="BBC"
+                        android:textSize="24dp"
+                        app:layout_constraintLeft_toRightOf="@id/img_bbc"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="영국 공영 방송"
+                        android:layout_marginTop="2dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toRightOf="@id/img_bbc"
+                        app:layout_constraintTop_toBottomOf="@id/txt_bbc" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_bbc"
+                    android:background="#00FFFFFF" />
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:id="@+id/img_ap"
+                        android:src="@drawable/ic_ap"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:id='@+id/txt_ap'
+                        android:text="Associated Press"
+                        android:textSize="24dp"
+                        app:layout_constraintLeft_toRightOf="@id/img_ap"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미국의 세계 최대의 비영리 뉴스통신사"
+                        android:layout_marginTop="2dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintLeft_toRightOf="@id/img_ap"
+                        app:layout_constraintTop_toBottomOf="@id/txt_ap" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_ap"
+                    android:background="#00FFFFFF" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="12"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

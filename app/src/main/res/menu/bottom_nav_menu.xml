@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_news"
-        android:icon="@drawable/newspaper_variant_outline"
+        android:icon="@drawable/ic_news"
         android:title="@string/title_news" />
 
     <item
