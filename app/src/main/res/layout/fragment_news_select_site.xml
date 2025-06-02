@@ -9,43 +9,31 @@
 
 
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="54dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_back" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 뉴스"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:layout_marginLeft="42dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 뉴스"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="3dp"/>
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="48dp"
+            android:background="#00FFFFFF"
+            android:id="@+id/btn_news_back" />
 
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:background="#00FFFFFF"
-                android:id="@+id/btn_news_back" />
-
-        </FrameLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="News Site"/>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

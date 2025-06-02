@@ -75,7 +75,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginBottom="4dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -124,10 +124,17 @@
                             android:background="#00FFFFFF" />
                     </FrameLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray"
+                        android:visibility="invisible"
+                        android:id="@+id/line1"/>
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginBottom="4dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -174,10 +181,17 @@
                             android:background="#00FFFFFF" />
                     </FrameLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        android:background="@color/gray"
+                        android:id="@+id/line2"/>
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginBottom="4dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -224,10 +238,17 @@
                             android:background="#00FFFFFF" />
                     </FrameLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        android:background="@color/gray"
+                        android:id="@+id/line3"/>
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginBottom="4dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -274,10 +295,17 @@
                             android:background="#00FFFFFF" />
                     </FrameLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        android:background="@color/gray"
+                        android:id="@+id/line4"/>
+
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginBottom="4dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -323,6 +351,13 @@
                             android:id="@+id/btn_news_list_5"
                             android:background="#00FFFFFF" />
                     </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        android:background="@color/gray"
+                        android:id="@+id/line5"/>
 
                     <FrameLayout
                         android:layout_width="match_parent"

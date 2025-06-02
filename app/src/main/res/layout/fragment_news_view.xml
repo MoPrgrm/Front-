@@ -6,64 +6,31 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_back" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 뉴스"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="3dp"/>
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:background="#00FFFFFF"
-                android:id="@+id/btn_news_back" />
-
-        </FrameLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="54dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_back" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/news_view_site_type"
-            android:text="외신뉴스:"
-            android:layout_weight="11"/>
+            android:text=" 뉴스"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:layout_marginLeft="42dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/news_view_topic_type"
-            android:text="topic"
-            android:layout_weight="10"/>
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="48dp"
+            android:background="#00FFFFFF"
+            android:id="@+id/btn_news_back" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"/>
-
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,7 +60,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="게시날짜"
+        android:text=""
         android:layout_marginLeft="40dp"
         android:textSize="12dp"
         android:id="@+id/txt_news_view_date"/>
@@ -193,6 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txt_news_view_word"
+                        android:hint="단어"
                         android:text=""
                         android:textSize="34dp" />
 
@@ -203,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txt_news_view_description"
                     android:textSize="20dp"
+                    android:hint="단어 뜻"
                     android:text=""/>
 
             </LinearLayout>
