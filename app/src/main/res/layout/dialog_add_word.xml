@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:hint="단어 입력"
         android:inputType="text"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
         android:layout_marginBottom="8dp"/>
 
     <EditText
@@ -19,6 +21,9 @@
         android:layout_height="wrap_content"
         android:hint="의미 입력"
         android:inputType="text"
+        android:maxLines="5"
+        android:gravity="top"
+        android:imeOptions="actionDone"
         android:layout_marginBottom="8dp"/>
 
 </LinearLayout>

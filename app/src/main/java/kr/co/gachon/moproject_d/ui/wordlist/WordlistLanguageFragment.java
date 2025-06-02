@@ -66,24 +66,36 @@ public class WordlistLanguageFragment extends Fragment {
         EditText etWord = dialogView.findViewById(R.id.etWord);
         EditText etMeaning = dialogView.findViewById(R.id.etMeaning);
 
-        new AlertDialog.Builder(requireContext())
+        // 기본 텍스트 입력 설정
+        etWord.setInputType(android.text.InputType.TYPE_CLASS_TEXT);
+        etMeaning.setInputType(android.text.InputType.TYPE_CLASS_TEXT);
+
+        // 다이얼로그 생성
+        AlertDialog dialog = new AlertDialog.Builder(requireContext())
                 .setTitle("단어 추가")
                 .setView(dialogView)
-                .setPositiveButton("추가", (dialog, which) -> {
-                    String word = etWord.getText().toString().trim();
-                    String meaning = etMeaning.getText().toString().trim();
-
-                    if (word.isEmpty() || meaning.isEmpty()) {
-                        Toast.makeText(requireContext(), "단어와 의미를 모두 입력해주세요", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    Word newWord = new Word(word, meaning, selectedLanguage);
-                    wordManager.saveWord(newWord);
-                    loadWords();
-                })
+                .setPositiveButton("추가", null)  // null로 설정하여 자동 닫힘 방지
                 .setNegativeButton("취소", null)
-                .show();
+                .create();
+
+        // 다이얼로그 표시
+        dialog.show();
+
+        // Positive 버튼 클릭 리스너 설정
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
+            String word = etWord.getText().toString().trim();
+            String meaning = etMeaning.getText().toString().trim();
+
+            if (word.isEmpty() || meaning.isEmpty()) {
+                Toast.makeText(requireContext(), "단어와 의미를 모두 입력해주세요", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Word newWord = new Word(word, meaning, selectedLanguage);
+            wordManager.saveWord(newWord);
+            loadWords();
+            dialog.dismiss();
+        });
     }
 
     private void loadWords() {
