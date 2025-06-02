@@ -14,6 +14,7 @@ import kr.co.gachon.moproject_d.model.Word;
 public class WordManager {
     private static final String PREF_NAME = "word_preferences";
     private static final String KEY_WORDS = "words";
+    private static final String KEY_COUNT = "count";
     private final SharedPreferences preferences;
     private final Gson gson;
 
@@ -25,6 +26,7 @@ public class WordManager {
     public void saveWord(Word word) {
         List<Word> words = getWords();
         words.add(word);
+        preferences.edit().putInt(KEY_COUNT, preferences.getInt(KEY_COUNT,0)+1).apply();
         saveWords(words);
     }
 
@@ -59,6 +61,7 @@ public class WordManager {
                 word.getWord().equals(wordToDelete.getWord()) &&
                         word.getLanguage().equals(wordToDelete.getLanguage())
         );
+        preferences.edit().putInt(KEY_COUNT, preferences.getInt(KEY_COUNT,0)-1).apply();
         saveWords(words);
     }
 }

@@ -1,6 +1,10 @@
 package kr.co.gachon.moproject_d.ui.news;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +20,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+
+import java.util.Objects;
 
 import kr.co.gachon.moproject_d.ChangeAccountActivity;
 import kr.co.gachon.moproject_d.R;
@@ -40,9 +46,14 @@ public class NewsFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        SharedPreferences prefs = requireContext().getSharedPreferences("word_preferences",MODE_PRIVATE);
+
+        Objects.requireNonNull(binding.txtCountQuiz).setText("총: " + prefs.getInt("count",0) + "개");
 
         binding.btnNewsGoSite.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_news_to_news_site);
